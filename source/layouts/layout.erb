@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="sv"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="sv"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="sv"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="sv"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title><%= data.page.title || "Linje Tio" %></title>
+  
+  <meta name="title" content="<%= data.page.title || "Linje Tio" %>">
+  <meta property="og:title" content="<%= data.page.title || "Linje Tio" %>">
+
+  <meta name="description" content="<%= data.page.description || "" %>">
+  <meta property="og:description" content="<%= data.page.description || "" %>">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta property="og:site_name" content="Linje Tio">
+  <% if data.page.url %>
+  <link rel="canonical" href="<%= data.page.url %>">
+  <meta property="og:url" content="<%= data.page.url %>">
+  <% end %>
+  <link rel="stylesheet" href="/stylesheets/base.css" media="screen,handheld">
+  <link rel="stylesheet" href="/stylesheets/mobile.css" media="only screen and (min-width:320px)">
+  <link rel="stylesheet" href="/stylesheets/desktop.css" media="only screen and (min-width:720px)">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/png1trv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type="text/javascript">
+    WebFontConfig ={
+      monotype: {
+        projectId: '52077111-806d-484c-bd4f-1a2d9d36b710'
+      }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+
+<body class="<%= page_classes %> linjetio">
+  <div id="wrap">
+    <header role="banner">
+      <div class="header">
+        <a href="/" id="logo">Linje Tio</a>
+      </div>
+      <% if data.page.show_nav %>
+      <p class="vcard">
+        <span class="tel">08-21 01 22</span><br>
+        <a href="mailto:bokning@linjetio.com" class="email">bokning@linjetio.com</a><br>
+        <span class="adr">Hornsbruksgatan 24</span><br>
+        Mån-Tor 17-00, Fre/Lör 17-02
+      </p>
+      <nav role="navigation">
+        <ul>
+          <li><a href="/meny.html">Vår meny</a> •</li>
+          <li><a href="#">Boka bord</a> •</li>
+          <li><a href="http://goo.gl/maps/do138">Karta</a></li>
+        </ul>
+      </nav>
+      <% else %>
+      <nav role="navigation">
+        <ul>
+          <li><a href="/">‹ Tillbaka</a></li>
+        </ul>
+      </nav>
+      <% end %>
+    </header>
+    <div id="content" role="main">
+      <div class="body">
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      <div class="newsletter">
+        <h2>Nyhetsbrev</h2>
+        <p>Håll dig uppdaterad på vad vi gör och när vi öppnar.</p>
+        <form action="http://nyhetsbrev.oktavilla.se/t/r/s/vujtyu/" method="post" id="subForm">
+          <div>
+            <label for="vujtyu-vujtyu" style="display:none;">Email:</label> <input type="text" name="cm-vujtyu-vujtyu" placeholder="Din e-post" id="vujtyu-vujtyu" size="15"> <input type="submit" value="Prenumerera">
+          </div>
+        </form>
+      </div>
+    </footer>
+  </div>
+  <script>
+    var _gaq=[['_setAccount','UA-27591057-2'],['_trackPageview'],['_trackPageLoadTime']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
